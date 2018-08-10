@@ -14,7 +14,8 @@ X = iris.data
 y = iris.target
 
 # Train Support Vector Machine (SVM) model with all data
-svmModel = svm.SVC(kernel='poly', degree=3, C=1.0).fit(X, y)
+svmModel = svm.SVC(kernel='rbf', degree=3, C=1.0).fit(X, y)
+
 
 # Persist model so that it can be used by different consumers
 svmFile = open('./models/SVMModel.pckl', 'wb')
