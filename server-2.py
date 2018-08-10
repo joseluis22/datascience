@@ -22,8 +22,9 @@ def predict():
     petWid = request.args['petal_width']
 
     testData = np.array([sepLen, sepWid, petLen, petWid]).reshape(1, 4)
-    class_prediced = int(svmIrisModel.predict(testData)[0])
-    output = "Predicted Iris Class: " + str(class_prediced)
+    prediced=svmIrisModel.predict(testData)
+    class_prediced = int(prediced[0])
+    output = "Predicted Iris Class: " + str(class_prediced) + " resultado"
 
     return (output)
 
